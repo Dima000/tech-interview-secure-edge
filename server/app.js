@@ -1,16 +1,19 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const auth = require("./middleware/auth");
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: '*'
+}));
 
 
 app.post("/login", async (req, res) => {
     try {
         const { email, password } = req.body;
-
         if (!(email && password)) {
             res.status(400).send("All input is required");
         }
