@@ -79,7 +79,13 @@ export default {
         return 'N/A'
       }
 
-      return [...values].sort().at(Math.round(values.length / 2))
+      if (values.length === 1) {
+        return values[0];
+      }
+
+      return [...values]
+          .sort()
+          .at(Math.round(values.length / 2))
     }
   },
 }
