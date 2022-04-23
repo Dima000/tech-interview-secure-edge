@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../modules/auth/Login.vue';
-import HelloWorld from '../components/HelloWorld.vue';
+import Dashboard from '../modules/dashboard/Dashboard.vue';
 import AuthService from '../modules/auth/auth-service';
 
 const routes = [
@@ -11,11 +11,11 @@ const routes = [
     },
     {
         path: '/',
-        name: 'home',
+        name: 'dashboard',
         meta: {
             needsAuth: true,
         },
-        component: HelloWorld
+        component: Dashboard
     },
 ]
 

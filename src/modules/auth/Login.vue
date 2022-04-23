@@ -66,7 +66,7 @@ export default {
     async onSubmit() {
       const token = await AuthService.login(this.email, this.password);
       localStorage.setItem('auth_token', token);
-      this.$router.push({ name: 'home' });
+      this.$router.push({ name: 'dashboard' });
     }
   }
 }
