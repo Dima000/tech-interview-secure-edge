@@ -1,7 +1,43 @@
-# Vue 3 + Vite
+# Technical test for SecureEdge
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Start the application in dev mode
 
-## Recommended IDE Setup
+#### Start client
+```
+cd client
+npm run dev
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+#### Start express server
+```
+cd server
+npm run start
+```
+
+#### Start web socket server
+```
+cd server
+npm run start:websocket
+```
+
+## Requirements
+#### Client
+
+Create an app that displays in real time 3 currency quotes (USD, EUR and GBP).
+
+The app should have a login page with data validation on the server(can be mock data). All the other pages should not be reachable if the user is not authenticated.
+
+Use Highcharts/Highstock for the charts.
+
+Use websocket to update the page in realtime.
+
+Also show a sortable and filterable table with the realtime latest values. Show the average and median for each currency.
+
+Use VueJs for the framework. Use any other libraries that you need.
+
+
+#### Server
+
+Create a NodeJs/Express server that pushes the data via websockets to the client(can be random data) and manages the authentication on the frontend.
+
+Update intervals every 5 seconds.

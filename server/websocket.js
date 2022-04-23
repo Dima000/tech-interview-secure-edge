@@ -26,14 +26,13 @@ wsServer.on('request', function (request) {
 function getRandomDataPoint() {
     return {
         date: Date.now(),
-        usd: randomBetween(1, 8),
-        eur: randomBetween(1, 10),
-        ron: randomBetween(1, 5),
+        usd: randomBetween(4, 5),
+        eur: randomBetween(4, 5),
+        gbp: randomBetween(4, 5),
     }
 }
 
 function randomBetween(min, max) {
-    return Math.floor(
-        Math.random() * (max - min + 1) + min
-    )
+    const number = Math.random() * (max - min + 1) + min;
+    return parseFloat(number.toFixed(2));
 }

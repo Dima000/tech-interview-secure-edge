@@ -41,14 +41,14 @@ export default {
       columnDefs: [
         {
           field: "date",
-          headerName: 'Date',
+          headerName: 'Time',
           filter: 'agTextColumnFilter',
           valueGetter: (params) => {
             return new Date(params.data.date).toLocaleTimeString('ro')
           }
         },
-        { field: "ron", headerName: 'RON' },
         { field: "usd", headerName: 'USD' },
+        { field: "gbp", headerName: 'GBP' },
         { field: "eur", headerName: 'EUR' },
       ],
     };
@@ -72,10 +72,9 @@ export default {
 
 };
 </script>
-<style scoped>
+<style lang="postcss" scoped>
 .table-grid {
-  width: 1000px;
-  margin: 0 auto;
+  @apply w-full mx-auto;
   height: 500px;
 }
 

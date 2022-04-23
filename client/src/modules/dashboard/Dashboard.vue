@@ -1,15 +1,18 @@
 <template>
-  <div class="container mx-auto">
-    <CurrencyTable :table-data="tableData" />
+  <div class="container mx-auto px-8">
+    <stats-cards :table-data="tableData"></stats-cards>
+    <currency-table :table-data="tableData" />
   </div>
 </template>
 
 <script>
 import CurrencyTable from './CurrencyTable.vue';
+import StatsCards from './StatsCards.vue';
 
 export default {
   name: "Dashboard",
   components: {
+    StatsCards,
     CurrencyTable,
   },
   data() {
